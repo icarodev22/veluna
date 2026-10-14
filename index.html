@@ -168,6 +168,17 @@ body.ready .hero__frame polygon{stroke-dashoffset:0}
 .about__name{font-family:var(--f-display);font-weight:700;font-size:clamp(44px,6vw,100px);line-height:.95;letter-spacing:-.04em;margin:0;text-transform:uppercase;color:var(--neon)}
 .about__text{font-size:clamp(18px,1.45vw,23px);line-height:1.5;margin:0;max-width:38ch;color:var(--bone)}
 
+/* ESTILOS (carrossel) */
+.genres{position:relative;overflow:hidden;border-block:1px solid var(--line);padding-block:clamp(10px,1.4vw,18px)}
+.genres__track{display:flex;width:max-content;animation:genres 40s linear infinite}
+.genres:hover .genres__track{animation-play-state:paused}
+.genres__run{display:flex;align-items:center;margin:0;padding:0;list-style:none;flex:none}
+.genres__run li{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.8vw,42px);line-height:1.1;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap;padding-inline:clamp(12px,1.4vw,22px);color:var(--bone)}
+.genres__run li.o{color:var(--neon)}
+.genres__run li.sep{font-weight:500;color:var(--ash);padding-inline:0}
+@keyframes genres{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.genres__track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}.genres__run[aria-hidden]{display:none}}
+
 /* TRAJETÓRIA — composição em camadas: palavra de fundo, fotos com máscaras, números e um rastro que liga tudo */
 .path{background:var(--void);overflow:hidden;isolation:isolate;padding-bottom:clamp(16px,2.5vw,40px)}
 .path__head{font-family:var(--f-display);font-weight:500;font-size:clamp(24px,3.2vw,52px);line-height:1.08;letter-spacing:-.03em;margin:22px 0 clamp(40px,5vw,80px);max-width:22ch;text-wrap:balance;position:relative;z-index:2}
@@ -225,8 +236,6 @@ body.ready .hero__frame polygon{stroke-dashoffset:0}
 @media (hover:hover){.btn--ghost:hover{color:var(--void)}}
 .btn--ghost:focus-visible{color:var(--void)}
 .book__kit{margin:-8px 0 0;color:var(--ash);font-size:11px}
-.book__msg{display:grid;gap:8px;justify-items:center;max-width:560px;width:100%}
-.book__msg p{margin:0;font-size:14px;color:var(--ash);border:1px dashed var(--line);border-radius:14px;padding:14px 16px;user-select:all}
 .book__logo{width:calc(100% + 6vw);margin:clamp(40px,6vw,80px) -3vw 0}
 .book__logo img{width:100%}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--line);margin-top:clamp(24px,3vw,40px);padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));color:var(--ash)}
@@ -349,6 +358,11 @@ body.ready .hero__frame polygon{stroke-dashoffset:0}
     </div>
   </section>
 
+  <!-- ESTILOS: carrossel contínuo (para ao passar o mouse; parado com movimento reduzido) -->
+  <section class="genres" aria-label="Estilos que Veluna toca: Funk, Anos 2000, Brasilidade, Bregafunk, House">
+    <div class="genres__track"><ul class="genres__run"><li class="o">Funk</li><li class="sep" aria-hidden="true">/</li><li class="">Anos 2000</li><li class="sep" aria-hidden="true">/</li><li class="o">Brasilidade</li><li class="sep" aria-hidden="true">/</li><li class="">Bregafunk</li><li class="sep" aria-hidden="true">/</li><li class="o">House</li><li class="sep" aria-hidden="true">/</li><li class="">Funk</li><li class="sep" aria-hidden="true">/</li><li class="o">Anos 2000</li><li class="sep" aria-hidden="true">/</li><li class="">Brasilidade</li><li class="sep" aria-hidden="true">/</li><li class="o">Bregafunk</li><li class="sep" aria-hidden="true">/</li><li class="">House</li><li class="sep" aria-hidden="true">/</li></ul><ul class="genres__run" aria-hidden="true"><li class="o">Funk</li><li class="sep" aria-hidden="true">/</li><li class="">Anos 2000</li><li class="sep" aria-hidden="true">/</li><li class="o">Brasilidade</li><li class="sep" aria-hidden="true">/</li><li class="">Bregafunk</li><li class="sep" aria-hidden="true">/</li><li class="o">House</li><li class="sep" aria-hidden="true">/</li><li class="">Funk</li><li class="sep" aria-hidden="true">/</li><li class="o">Anos 2000</li><li class="sep" aria-hidden="true">/</li><li class="">Brasilidade</li><li class="sep" aria-hidden="true">/</li><li class="o">Bregafunk</li><li class="sep" aria-hidden="true">/</li><li class="">House</li><li class="sep" aria-hidden="true">/</li></ul></div>
+  </section>
+
   <!-- 3. TRAJETÓRIA — dados reais: 100+ shows, 4 estados, origem Recife (PE) -->
   <section class="sec path" id="trajetoria" aria-labelledby="t-traj">
     <span class="sec__label mono">Trajetória</span>
@@ -397,11 +411,6 @@ body.ready .hero__frame polygon{stroke-dashoffset:0}
         <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v10M4.5 8.5L9 13l4.5-4.5M3 15.5h12" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
       </div>
       <p class="book__kit mono">Press kit com bio, fotos em alta e material para contratantes</p>
-      <div class="book__msg" id="bookMsg" hidden>
-        <span class="mono" id="bookMsgLabel">Mensagem sugerida</span>
-        <p id="bookMsgText"></p>
-        <button class="link" id="copyMsg" type="button">Copiar mensagem</button>
-      </div>
     </div>
     <div class="book__logo" aria-hidden="true"><img loading="lazy" src="assets/veluna-logo.webp" alt="" width="2400" height="298"></div>
     <footer class="foot mono">
@@ -443,22 +452,15 @@ const num = (CONTATO.WHATSAPP || '').replace(/\D/g, '');
 const ig = (CONTATO.INSTAGRAM || '').replace(/^@/, '').trim();
 const waUrl = num ? `https://wa.me/${num}?text=${encodeURIComponent(CONTATO.MENSAGEM)}` : '';
 const bookBtn = $('#bookBtn');
-const showMsg = label => { $('#bookMsgText').textContent = CONTATO.MENSAGEM; $('#bookMsgLabel').textContent = label; $('#bookMsg').hidden = false; };
 if (waUrl) {
   bookBtn.href = waUrl;
   bookBtn.setAttribute('aria-label', 'Contrate agora pelo WhatsApp (abre em nova aba)');
 } else if (ig) {
   bookBtn.href = `https://ig.me/m/${ig}`;
   bookBtn.setAttribute('aria-label', 'Contrate agora: mensagem no Instagram (abre em nova aba)');
-  showMsg('Envie esta mensagem no direct');
 } else {
-  bookBtn.hidden = true; showMsg('Mensagem sugerida');
+  bookBtn.hidden = true;
 }
-$('#copyMsg').addEventListener('click', () => {
-  const b = $('#copyMsg');
-  const sel = () => { const r = document.createRange(); r.selectNodeContents($('#bookMsgText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Texto selecionado'; };
-  try { navigator.clipboard.writeText(CONTATO.MENSAGEM).then(() => { b.textContent = 'Mensagem copiada'; setTimeout(() => b.textContent = 'Copiar mensagem', 2200); }, sel); } catch (e) { sel(); }
-});
 const social = $('#social');
 if (ig) social.insertAdjacentHTML('afterbegin', `<a href="https://www.instagram.com/${ig}/" target="_blank" rel="noopener">Instagram @${ig}</a>`);
 if (waUrl) social.insertAdjacentHTML('beforeend', `<a href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>`);
