@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VELUNA · @Velunadj</title>
+<meta name="description" content="VELUNA é o DJ Pedro, de Recife (PE): mais de 100 shows em 4 estados. Contrate para o seu evento.">
+<meta name="theme-color" content="#050605">
+<meta property="og:title" content="VELUNA · DJ · Recife, PE">
+<meta property="og:description" content="Mais de 100 shows em 4 estados. Contrate para o seu evento.">
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VELUNA tocando no palco, com o logotipo no painel de LED">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Ao publicar no domínio oficial, troque os caminhos de og:image por endereços completos (https://seudominio/assets/og.jpg) e adicione <link rel="canonical"> -->
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="preload" as="image" href="assets/veluna-palco-1400.webp" imagesrcset="assets/veluna-palco-720.webp 720w, assets/veluna-palco-1400.webp 1400w" imagesizes="(max-width:900px) 90vw, 58vw">
+<script>document.documentElement.classList.add('js','is-loading');
+/* segurança: se algo falhar, a rolagem nunca fica presa */
+setTimeout(function(){var h=document.documentElement;if(h.classList.contains('is-loading')){h.classList.remove('is-loading');var i=document.getElementById('intro');if(i)i.classList.add('is-gone');document.body&&document.body.classList.add('ready');}},9000);</script>
+<style>
+/* Layout: página curta de contratação — logotipo monumental cortando a foto de palco, fotos recortadas nas formas do logo
+   (barras do E, triângulo do A), verde como luz que aponta sempre para o botão CONTRATE. */
+:root{
+  --void:#050605;
+  --ink:#0b0f0b;
+  --moss:#0c2410;
+  --moss-2:#123a17;
+  --neon:#c1f120;
+  --bone:#eef1e8;
+  --ash:#9aa394;
+  --line:rgba(238,241,232,.14);
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.77,0,.18,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --bar:polygon(14% 0,100% 0,86% 100%,0 100%);
+  --tri:polygon(50% 0,100% 100%,0 100%);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;background:var(--void);color:var(--bone);font-family:var(--f-body);font-size:clamp(16px,1.05vw,18px);line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+::selection{background:var(--neon);color:var(--void)}
+:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--neon);color:var(--void);padding:10px 14px;font-weight:600;text-decoration:none}
+.skip:focus{top:16px}
+.grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============ BOTÕES ============ */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:0 26px;border-radius:999px;
+  text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;overflow:hidden;isolation:isolate;
+  background:var(--neon);color:var(--void);transition:transform .2s,box-shadow .4s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--bone);clip-path:circle(0 at var(--bx,50%) var(--by,50%));transition:clip-path .6s var(--ease)}
+.btn:focus-visible::before{clip-path:circle(150% at var(--bx,50%) var(--by,50%))}
+.btn:active{transform:scale(.96)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .5s var(--ease-out)}
+@media (hover:hover){.btn:hover::before{clip-path:circle(150% at var(--bx,50%) var(--by,50%))}.btn:hover svg{transform:translate(3px,-3px)}.link:hover{background-size:100% 1px;color:var(--neon)}.foot a:hover{color:var(--neon)}}
+.btn--big{min-height:66px;padding:0 32px;font-size:clamp(13px,1.1vw,16px)}
+.link{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  background:linear-gradient(var(--neon),var(--neon)) left calc(100% - 8px)/0 1px no-repeat;transition:background-size .5s var(--ease),color .3s}
+.link:focus-visible{background-size:100% 1px;color:var(--neon)}
+.link svg{width:14px;height:14px}
+
+/* ============ INTRO: fragmentos que formam VELUNA ============ */
+html.is-loading,html.is-loading body{overflow:hidden;height:100%}
+.intro{display:none}
+.js .intro{display:block;position:fixed;inset:0;z-index:150;background:var(--void);cursor:progress;
+  transition:opacity .8s var(--ease),visibility 0s linear .8s}
+.intro canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.intro__stack{position:absolute;left:50%;top:50%;width:min(78vw,820px);translate:-50% -50%;display:grid;gap:clamp(22px,4vh,40px);justify-items:center;pointer-events:none}
+.intro__logo{width:100%;opacity:0;transition:opacity .45s ease,filter .8s var(--ease),transform .8s var(--ease)}
+.intro__bar{width:min(100%,420px);display:flex;align-items:center;gap:14px;color:var(--ash);opacity:0;transform:translateY(8px);transition:opacity .5s,transform .6s var(--ease-out)}
+.intro__track{flex:1;height:1px;background:rgba(238,241,232,.12);position:relative;overflow:hidden;border-radius:2px}
+.intro__track i{position:absolute;inset:0;background:var(--neon);transform-origin:left;transform:scaleX(0)}
+.intro__pct{font-variant-numeric:tabular-nums;min-width:4ch;text-align:right;color:var(--bone)}
+.intro.show-bar .intro__bar{opacity:1;transform:none}
+.intro.formed .intro__logo{opacity:1}
+.intro.is-out{opacity:0;visibility:hidden}
+.intro.is-out .intro__logo{transform:scale(1.02)}
+.intro.is-gone{display:none!important}
+.intro--simple .intro__logo{opacity:1}
+
+/* ============ CABEÇALHO ============ */
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:calc(14px + env(safe-area-inset-top,0px)) max(var(--gut),env(safe-area-inset-right,0px)) 14px max(var(--gut),env(safe-area-inset-left,0px));transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.bar.is-scrolled{background:rgba(5,6,5,.74);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.bar__logo{width:118px;display:flex;align-items:center;min-height:44px;flex:none}
+.bar__nav{display:flex;align-items:center;gap:clamp(16px,2.4vw,36px)}
+.bar__nav .link{color:var(--bone)}
+.bar .btn{min-height:46px;padding:0 20px;font-size:12px;flex:none;white-space:nowrap}
+
+/* ============ CURSOR (discreto) ============ */
+.cursor{display:none}
+@media (hover:hover) and (pointer:fine){
+  .cursor{display:block;position:fixed;left:0;top:0;z-index:120;pointer-events:none}
+  .cursor__dot{position:fixed;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--neon);transition:opacity .3s}
+  .cursor.is-hover .cursor__dot{opacity:0}
+  .cursor.is-hidden{opacity:0}
+}
+
+/* ============ REVELAÇÕES ============ */
+.js [data-reveal]{transition:opacity .9s var(--ease-out),transform 1s var(--ease-out),clip-path 1.1s var(--ease)}
+.js [data-reveal="up"]:not(.in){opacity:0;transform:translateY(36px)}
+.js [data-reveal="mask"]:not(.in){clip-path:inset(100% 0 0 0)}
+.js [data-reveal="bar"]:not(.in){clip-path:polygon(0 0,0 0,0 100%,0 100%)}
+.js [data-reveal="bar"].in{clip-path:var(--bar)}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.split .w>span{display:inline-block;transition:transform .9s var(--ease-out);transition-delay:calc(var(--i,0) * 45ms)}
+.js .split:not(.in) .w>span{transform:translateY(110%)}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;padding:calc(104px + env(safe-area-inset-top,0px)) var(--gut) 36px;display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto 1fr auto;column-gap:clamp(12px,2vw,28px);overflow:hidden;isolation:isolate}
+.hero__meta{grid-column:1/-1;grid-row:1;align-self:start;display:flex;justify-content:space-between;gap:16px;color:var(--ash);flex-wrap:wrap}
+.hero__meta b{color:var(--neon);font-weight:500}
+.hero__stage{grid-column:6/13;grid-row:1/3;position:relative;align-self:start;margin-top:36px;height:clamp(340px,60vh,640px);max-width:100%}
+.hero__photo{position:absolute;inset:0;clip-path:var(--bar);overflow:hidden;background:var(--moss)}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform:scale(1.12);transition:transform 1.8s var(--ease-out);filter:saturate(.9) contrast(1.05)}
+.hero__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,6,5,.55))}
+.hero__frame{position:absolute;inset:0;translate:4% 5%;pointer-events:none}
+.hero__frame svg{width:100%;height:100%;overflow:visible}
+.hero__frame polygon{fill:none;stroke:var(--neon);stroke-width:2;vector-effect:non-scaling-stroke;stroke-dasharray:4000;stroke-dashoffset:4000;transition:stroke-dashoffset 1.6s var(--ease) .3s}
+.hero__copy{grid-column:1/6;grid-row:2;align-self:end;display:grid;gap:24px;position:relative;z-index:4;justify-items:start;padding:28px 0 calc(7vw + 32px)}
+.hero__role{display:flex;align-items:center;gap:14px;color:var(--neon)}
+.hero__role::before{content:"";width:40px;height:1px;background:var(--neon)}
+.hero__line{font-family:var(--f-display);font-weight:500;font-size:clamp(30px,3.5vw,58px);line-height:1.04;letter-spacing:-.03em;margin:0;text-wrap:balance}
+.hero__line em{font-style:normal;color:var(--neon)}
+.hero__ctas{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
+.hero__logo{grid-column:1/-1;grid-row:3;position:relative;z-index:3;margin:-7vw calc(var(--gut) * -1) 0;
+  width:calc(100% + var(--gut) * 2 + 9vw);max-width:none;translate:-4.5vw 0;pointer-events:none}
+.hero__logo img{width:100%;clip-path:inset(0 100% 0 0);transition:clip-path 1.1s var(--ease) .1s}
+html:not(.js) .hero__logo img{clip-path:none}
+html:not(.js) .hero__frame polygon{stroke-dashoffset:0}
+body.ready .hero__logo img{clip-path:inset(0 0 0 0)}
+body.ready .hero__photo img{transform:scale(1.03)}
+body.ready .hero__frame polygon{stroke-dashoffset:0}
+
+/* ============ SEÇÕES ============ */
+.sec{position:relative;padding:clamp(48px,6.5vw,96px) var(--gut)}
+.sec__label{color:var(--neon);display:flex;align-items:center;gap:10px}
+.sec__label::before{content:"";width:22px;height:1px;background:currentColor}
+.hl{color:var(--neon);font-weight:600;white-space:nowrap}
+
+/* SOBRE */
+.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,40px);align-items:center}
+.about__img{grid-column:1/6;position:relative;isolation:isolate}
+.about__img .ph{aspect-ratio:4/5;overflow:hidden;background:var(--moss)}
+.about__img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.about__img::after{content:"";position:absolute;inset:0;translate:-14px 14px;border:1px solid var(--neon);z-index:-1;pointer-events:none}
+.about__body{grid-column:7/13;display:grid;gap:26px;min-width:0}
+.about__name{font-family:var(--f-display);font-weight:700;font-size:clamp(44px,6vw,100px);line-height:.95;letter-spacing:-.04em;margin:0;text-transform:uppercase;color:var(--neon)}
+.about__text{font-size:clamp(18px,1.45vw,23px);line-height:1.5;margin:0;max-width:38ch;color:var(--bone)}
+
+/* TRAJETÓRIA — composição em camadas: palavra de fundo, fotos com máscaras, números e um rastro que liga tudo */
+.path{background:var(--void);overflow:hidden;isolation:isolate;padding-bottom:clamp(16px,2.5vw,40px)}
+.path__head{font-family:var(--f-display);font-weight:500;font-size:clamp(24px,3.2vw,52px);line-height:1.08;letter-spacing:-.03em;margin:22px 0 clamp(40px,5vw,80px);max-width:22ch;text-wrap:balance;position:relative;z-index:2}
+.path__head b{font-weight:700;color:var(--neon)}
+.pstage{position:relative;height:clamp(560px,57vw,840px)}
+.pcard{position:absolute;margin:0}
+.pcard__mask{position:relative;width:100%;height:100%;overflow:hidden;background:var(--moss)}
+.pcard__rv{position:absolute;inset:0;overflow:hidden}
+.pcard img{width:100%;height:100%;object-fit:cover}
+.pcard figcaption{position:absolute;display:flex;align-items:center;gap:10px;color:var(--bone);z-index:3}
+.pcard figcaption{color:var(--ash)}
+/* A: pista cheia — barra inclinada do E, revelada de baixo para cima pela rolagem (lenta) */
+.pcard--a{left:0;top:0;width:54%;aspect-ratio:4/4.7}
+.pcard--a .pcard__mask{clip-path:var(--bar);background:transparent}
+.pcard--a .pcard__rv{clip-path:inset(calc((1 - var(--ra,0)) * 100%) 0 0 0)}
+.pcard--a img{object-position:50% 58%;transform:scale(calc(1.32 - var(--ra,0) * .3)) translateY(calc((1 - var(--ra,0)) * 4%))}
+.pcard--a .pcard__mask::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(5,6,5,.6))}
+.pcard--a figcaption{left:15%;top:22px}
+.pcard__frame{position:absolute;inset:0;translate:-3% 3%;pointer-events:none;z-index:-1}
+.pcard__frame svg{width:100%;height:100%;overflow:visible;display:block}
+.pcard__frame polygon{fill:none;stroke:var(--neon);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--ra,0))}
+/* B: cabine — recorte retangular simples, revelado da direita para a esquerda */
+.pcard--b{right:1%;top:23%;width:33%;aspect-ratio:3/4;z-index:3}
+.pcard--b .pcard__mask{clip-path:inset(0 0 0 calc((1 - var(--rb,0)) * 100%))}
+.pcard--b img{object-position:50% 40%;transform:scale(calc(1.1 - var(--rb,0) * .1))}
+.pcard--b figcaption{left:0;bottom:-50px}
+/* borda padrão: mesma moldura verde deslocada do retrato em "Sobre" */
+.pcard--b::after{content:"";position:absolute;inset:0;translate:-14px 14px;border:1px solid var(--neon);z-index:-1;pointer-events:none;opacity:var(--rb,0)}
+/* números integrados */
+.pnum{position:absolute;z-index:4;pointer-events:none}
+.pnum__in{display:grid;gap:8px}
+.pnum__n{font-family:var(--f-display);font-weight:900;line-height:.8;letter-spacing:-.07em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pnum__u{font-family:var(--f-display);font-weight:700;font-size:clamp(15px,1.6vw,26px);letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.pnum__u::before{content:"";width:clamp(26px,3.6vw,56px);height:2px;background:var(--neon)}
+.pnum--100{left:31%;top:57%}
+.pnum--100 .pnum__n{font-size:clamp(96px,15vw,250px);color:var(--bone);text-shadow:0 8px 40px rgba(0,0,0,.45)}
+.pnum--100 .pnum__n span+span{color:var(--neon)}
+.pnum--4{left:46%;top:-2%;z-index:2}
+.pnum--4 .pnum__n{font-size:clamp(150px,24vw,380px);color:transparent;-webkit-text-stroke:2px var(--neon)}
+.pnum--4 .pnum__u{margin-top:-.4em;padding-left:.4em}
+.js .pnum__in{transition:opacity .9s var(--ease-out),transform 1.2s var(--ease-out)}
+.js .pnum--100 .pnum__in:not(.in){opacity:0;transform:translateX(-8vw)}
+.js .pnum--4 .pnum__in:not(.in){opacity:0;transform:translateY(-6vw) scale(.92)}
+.pnum--100{translate:0 calc(var(--tp,0) * -40px)}
+
+/* CONTRATAÇÃO */
+.book{position:relative;padding:clamp(40px,5vw,80px) var(--gut) 0;overflow:hidden;isolation:isolate}
+.book__inner{display:grid;justify-items:center;text-align:center;gap:clamp(22px,3vw,34px)}
+.book__q{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5.4vw,90px);line-height:.98;letter-spacing:-.04em;margin:0;max-width:16ch;text-transform:uppercase;text-wrap:balance}
+.book__q em{font-style:normal;color:var(--neon)}
+.book__p{margin:0;color:var(--ash);font-size:clamp(17px,1.3vw,21px);max-width:44ch}
+.book__ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn--ghost{background:transparent;color:var(--bone);box-shadow:inset 0 0 0 1.5px var(--neon)}
+.btn--ghost::before{background:var(--neon)}
+@media (hover:hover){.btn--ghost:hover{color:var(--void)}}
+.btn--ghost:focus-visible{color:var(--void)}
+.book__kit{margin:-8px 0 0;color:var(--ash);font-size:11px}
+.book__msg{display:grid;gap:8px;justify-items:center;max-width:560px;width:100%}
+.book__msg p{margin:0;font-size:14px;color:var(--ash);border:1px dashed var(--line);border-radius:14px;padding:14px 16px;user-select:all}
+.book__logo{width:calc(100% + 6vw);margin:clamp(40px,6vw,80px) -3vw 0}
+.book__logo img{width:100%}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--line);margin-top:clamp(24px,3vw,40px);padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));color:var(--ash)}
+.foot__social{display:flex;gap:18px;flex-wrap:wrap}
+.credit{flex-basis:100%;display:flex!important;justify-content:center;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--line);color:var(--ash)}
+.credit svg{width:15px;height:15px}
+.credit b{color:var(--neon);font-weight:500}
+.foot a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+
+
+/* ============ RESPONSIVO ============ */
+@media (max-width:900px){
+  .bar__nav .link{display:none}
+  .hero{grid-template-rows:auto auto auto auto;padding-top:calc(86px + env(safe-area-inset-top,0px));min-height:0}
+  .hero__stage{grid-column:2/-1;grid-row:2;margin-top:22px;height:auto;aspect-ratio:4/3.4}
+  .hero__copy{grid-column:1/-1;grid-row:4;margin-top:20px;padding:0}
+  .hero__logo{grid-row:3;margin-top:-6vw;width:calc(100% + var(--gut) * 2 + 14vw);translate:-7vw 0}
+  .about__img{grid-column:1/-1;max-width:420px;margin-left:14px}
+  .about__body{grid-column:1/-1}
+  .pstage{height:auto;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));row-gap:0;padding-bottom:56px}
+  .pcard,.pnum{position:relative;inset:auto}
+  .pcard--a{grid-column:1/12;grid-row:1;width:auto;aspect-ratio:4/4.6}
+  .pnum--100{grid-column:1/-1;grid-row:2;margin-top:-17vw;translate:none}
+  .pnum--100 .pnum__n{font-size:clamp(84px,27vw,200px)}
+  .pnum--4{grid-column:1/6;grid-row:3;align-self:center;margin-top:8vw}
+  .pnum--4 .pnum__n{font-size:clamp(110px,36vw,260px)}
+  .pcard--b{grid-column:6/-1;grid-row:3;width:auto;margin-top:6vw}
+  .pcard--b figcaption{left:auto;right:0;bottom:-48px}
+}
+@media (max-width:600px){
+  .grain{display:none}
+  .hero__meta{flex-wrap:nowrap}
+  .bar__logo{width:96px}
+  .bar .btn{min-height:44px;padding:0 16px;gap:10px}
+  .bar__nav{gap:0}
+  .hero__ctas .btn{width:100%}
+  .book .btn{width:100%}
+  .book__ctas{width:100%}
+}
+@media (max-width:380px){
+  .hero__meta span:last-child{display:none}
+}
+/* celulares baixos (ex.: iPhone SE): foto do hero mais curta para o botão aparecer mais cedo */
+@media (max-width:600px) and (max-height:700px){
+  .hero{padding-top:calc(78px + env(safe-area-inset-top,0px))}
+  .hero__stage{aspect-ratio:4/3;margin-top:14px}
+  .hero__copy{gap:18px;margin-top:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#sobre">Pular para o conteúdo</a>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- INTRO: fragmentos verdes se espalham e se encaixam formando VELUNA; aparece em toda recarga -->
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas id="introCanvas"></canvas>
+  <div class="intro__stack">
+    <img class="intro__logo" id="introLogo" src="assets/veluna-logo.webp" alt="" width="2400" height="298">
+    <div class="intro__bar mono"><div class="intro__track"><i id="introFill"></i></div><span class="intro__pct" id="introPct">0%</span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div></div>
+
+<!-- CABEÇALHO -->
+<header class="bar" id="bar">
+  <a class="bar__logo" href="#top" aria-label="VELUNA — início"><img src="assets/veluna-logo.webp" alt="VELUNA" width="2400" height="298"></a>
+  <nav class="bar__nav" aria-label="Navegação">
+    <a class="link" href="#sobre">Sobre</a>
+    <a class="link" href="#trajetoria">Trajetória</a>
+    <a class="btn" href="#contratar">Contrate
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14L14 4M6 4h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="hero__meta mono">
+      <span><b>●</b> 100+ shows · 4 estados</span>
+      <span>@Velunadj</span>
+    </div>
+
+    <div class="hero__stage" data-speed="-0.05">
+      <div class="hero__frame" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="14,0 100,0 86,100 0,100"/></svg></div>
+      <div class="hero__photo">
+        <img src="assets/veluna-palco-1400.webp" srcset="assets/veluna-palco-720.webp 720w, assets/veluna-palco-1400.webp 1400w" sizes="(max-width:900px) 90vw, 58vw" alt="VELUNA no palco, diante de um painel de LED" width="1400" height="2100" fetchpriority="high">
+      </div>
+    </div>
+
+    <div class="hero__copy">
+      <span class="hero__role mono">DJ · Recife, PE</span>
+      <p class="hero__line split" data-split>Uma nova energia para o <em>seu evento.</em></p>
+      <div class="hero__ctas">
+        <a class="btn btn--big" href="#contratar">Contrate para seu evento
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14L14 4M6 4h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+        <a class="link" href="#sobre">Conheça o artista
+          <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M2 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </div>
+
+    <h1 class="hero__logo" id="t-hero"><span class="sr-only">VELUNA — DJ em Recife, PE</span><img src="assets/veluna-logo.webp" alt="" width="2400" height="298"></h1>
+  </section>
+
+  <!-- 2. SOBRE (somente informações reais) -->
+  <section class="sec" id="sobre" aria-labelledby="t-sobre">
+    <div class="about">
+      <div class="about__img" data-speed="0.04">
+        <div class="ph" data-reveal="mask"><img loading="lazy" decoding="async" src="assets/veluna-retrato-720.webp" srcset="assets/veluna-retrato-720.webp 720w, assets/veluna-retrato-1400.webp 1400w" sizes="(max-width:900px) 90vw, 40vw" alt="Pedro, o VELUNA, de fones, diante de um painel de luz violeta" width="720" height="1080"></div>
+      </div>
+      <div class="about__body">
+        <span class="sec__label mono">Sobre Veluna</span>
+        <h2 class="about__name split" id="t-sobre" data-split>Veluna</h2>
+        <p class="about__text" data-reveal="up">Com apenas 18 anos, Pedro, conhecido artisticamente como Veluna, vem construindo sua trajetória na música a partir de um talento que primeiro chamou a atenção dos amigos. Natural de Recife, Pernambuco, iniciou sua caminhada nos palcos e já acumula <span class="hl">mais de 100 shows</span> realizados em <span class="hl">4 estados</span>, mostrando que sua história está apenas começando.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TRAJETÓRIA — dados reais: 100+ shows, 4 estados, origem Recife (PE) -->
+  <section class="sec path" id="trajetoria" aria-labelledby="t-traj">
+    <span class="sec__label mono">Trajetória</span>
+    <h2 class="path__head split" id="t-traj" data-split>Uma carreira que já passou por <b>4 estados.</b> Mais de <b>100 shows</b> realizados.</h2>
+
+    <div class="pstage" id="pstage">
+      <figure class="pcard pcard--a" data-speed="-0.04">
+        <div class="pcard__frame" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon pathLength="1" points="14,0 100,0 86,100 0,100"/></svg></div>
+        <div class="pcard__mask"><div class="pcard__rv">
+          <img loading="lazy" decoding="async" src="assets/veluna-publico-1400.webp" srcset="assets/veluna-publico-720.webp 720w, assets/veluna-publico-1400.webp 1400w" sizes="(max-width:900px) 92vw, 54vw" alt="VELUNA de costas na cabine, tocando para a pista cheia" width="1400" height="1867">
+        </div></div>
+        <figcaption class="mono">Ao vivo</figcaption>
+      </figure>
+
+      <div class="pnum pnum--4" data-speed="-0.08"><div class="pnum__in" data-reveal="up">
+        <div class="pnum__n" aria-hidden="true"><span data-count="4">4</span></div>
+        <div class="pnum__u">Estados</div><span class="sr-only">4 estados</span>
+      </div></div>
+
+      <figure class="pcard pcard--b" data-speed="0.1">
+        <div class="pcard__mask">
+          <img loading="lazy" decoding="async" src="assets/veluna-palco-verde-620.webp" srcset="assets/veluna-palco-verde-620.webp 620w, assets/veluna-palco-verde-1100.webp 1100w" sizes="(max-width:900px) 62vw, 34vw" alt="VELUNA tocando no palco, com o logotipo VELUNA no painel de LED e luzes verdes ao fundo" width="620" height="827">
+        </div>
+        <figcaption class="mono">Na cabine</figcaption>
+      </figure>
+
+      <div class="pnum pnum--100"><div class="pnum__in" data-reveal="up">
+        <div class="pnum__n" aria-hidden="true"><span data-count="100">100</span><span>+</span></div>
+        <div class="pnum__u">Shows realizados</div><span class="sr-only">Mais de 100 shows realizados</span>
+      </div></div>
+
+    </div>
+
+  </section>
+
+  <!-- 4. CONTRATAÇÃO + 5. RODAPÉ -->
+  <section class="book" id="contratar" aria-labelledby="t-book">
+    <div class="book__inner">
+      <span class="sec__label mono">Contratação</span>
+      <h2 class="book__q split" id="t-book" data-split>Vamos levar <em>Veluna</em> para o seu evento?</h2>
+      <p class="book__p" data-reveal="up">Entre em contato para consultar disponibilidade e conversar sobre a contratação.</p>
+      <div class="book__ctas">
+      <a class="btn btn--big" id="bookBtn" href="#contratar" target="_blank" rel="noopener">Contrate agora
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14L14 4M6 4h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <a class="btn btn--big btn--ghost" href="https://drive.google.com/drive/folders/1NYSE4I7yMchqzPoIAPOxklqszCCeoV1v" target="_blank" rel="noopener" aria-label="Baixar press kit da VELUNA (abre o Google Drive em nova aba)">Baixar press kit
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v10M4.5 8.5L9 13l4.5-4.5M3 15.5h12" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      </div>
+      <p class="book__kit mono">Press kit com bio, fotos em alta e material para contratantes</p>
+      <div class="book__msg" id="bookMsg" hidden>
+        <span class="mono" id="bookMsgLabel">Mensagem sugerida</span>
+        <p id="bookMsgText"></p>
+        <button class="link" id="copyMsg" type="button">Copiar mensagem</button>
+      </div>
+    </div>
+    <div class="book__logo" aria-hidden="true"><img loading="lazy" src="assets/veluna-logo.webp" alt="" width="2400" height="298"></div>
+    <footer class="foot mono">
+      <span>© <span id="year">2026</span> VELUNA · DJ · Recife, PE</span>
+      <div class="foot__social" id="social"><a href="https://drive.google.com/drive/folders/1NYSE4I7yMchqzPoIAPOxklqszCCeoV1v" target="_blank" rel="noopener">Press kit</a></div>
+      <a class="credit" href="https://www.instagram.com/results.ag/" target="_blank" rel="noopener" aria-label="Feito pela Results.ag — Instagram da Results.ag (abre em nova aba)">Feito pela
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+        <b>results.ag</b></a>
+    </footer>
+  </section>
+</main>
+
+
+<script>
+/* =====================================================================
+   CONTATO DE CONTRATAÇÃO — PREENCHER COM OS DADOS OFICIAIS
+   WHATSAPP: só números, com 55 + DDD. Ex.: '5581999999999'
+   Enquanto WHATSAPP estiver vazio, "Contrate agora" abre a conversa
+   no Instagram e mostra a mensagem pronta para copiar.
+   ===================================================================== */
+const CONTATO = {
+  WHATSAPP: '',          // >>> PREENCHER com o número oficial de contratação
+  INSTAGRAM: 'velunadj', // usuário sem @ (confirmar)
+  MENSAGEM: 'Olá! Tenho interesse em contratar o Veluna para um evento. Gostaria de saber mais sobre disponibilidade e condições.'
+};
+
+(() => {
+'use strict';
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover:hover) and (pointer:fine)').matches;
+let vh = innerHeight;
+addEventListener('resize', () => { vh = innerHeight; }, {passive:true});
+$('#year').textContent = new Date().getFullYear();
+
+/* ---------- links de contratação ---------- */
+const num = (CONTATO.WHATSAPP || '').replace(/\D/g, '');
+const ig = (CONTATO.INSTAGRAM || '').replace(/^@/, '').trim();
+const waUrl = num ? `https://wa.me/${num}?text=${encodeURIComponent(CONTATO.MENSAGEM)}` : '';
+const bookBtn = $('#bookBtn');
+const showMsg = label => { $('#bookMsgText').textContent = CONTATO.MENSAGEM; $('#bookMsgLabel').textContent = label; $('#bookMsg').hidden = false; };
+if (waUrl) {
+  bookBtn.href = waUrl;
+  bookBtn.setAttribute('aria-label', 'Contrate agora pelo WhatsApp (abre em nova aba)');
+} else if (ig) {
+  bookBtn.href = `https://ig.me/m/${ig}`;
+  bookBtn.setAttribute('aria-label', 'Contrate agora: mensagem no Instagram (abre em nova aba)');
+  showMsg('Envie esta mensagem no direct');
+} else {
+  bookBtn.hidden = true; showMsg('Mensagem sugerida');
+}
+$('#copyMsg').addEventListener('click', () => {
+  const b = $('#copyMsg');
+  const sel = () => { const r = document.createRange(); r.selectNodeContents($('#bookMsgText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Texto selecionado'; };
+  try { navigator.clipboard.writeText(CONTATO.MENSAGEM).then(() => { b.textContent = 'Mensagem copiada'; setTimeout(() => b.textContent = 'Copiar mensagem', 2200); }, sel); } catch (e) { sel(); }
+});
+const social = $('#social');
+if (ig) social.insertAdjacentHTML('afterbegin', `<a href="https://www.instagram.com/${ig}/" target="_blank" rel="noopener">Instagram @${ig}</a>`);
+if (waUrl) social.insertAdjacentHTML('beforeend', `<a href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>`);
+
+/* ---------- divisão de palavras ---------- */
+$$('[data-split]').forEach(el => {
+  let i = 0;
+  const walk = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const f = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(p => {
+        if (!p) return;
+        if (/^\s+$/.test(p)) { f.appendChild(document.createTextNode(' ')); return; }
+        const w = document.createElement('span'); w.className = 'w';
+        const s = document.createElement('span'); s.textContent = p; s.style.setProperty('--i', i++);
+        w.appendChild(s); f.appendChild(w);
+      });
+      n.replaceWith(f);
+    } else if (n.nodeType === 1) walk(n);
+  });
+  walk(el);
+});
+
+/* ---------- revelações (observa o pai: alvos recortados não reportam interseção) ---------- */
+const hero = $('.hero');
+const map = new Map();
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  (map.get(e.target) || []).forEach(el => { el.classList.add('in'); if (el.querySelector('[data-count]')) count(el); });
+  io.unobserve(e.target);
+}), {rootMargin:'0px 0px -8% 0px', threshold:.05});
+$$('[data-reveal],[data-split]').forEach(el => {
+  if (hero.contains(el)) return;
+  const host = el.parentElement; if (!map.has(host)) map.set(host, []); map.get(host).push(el); io.observe(host);
+});
+
+/* ---------- contagem dos números ---------- */
+function count(el){
+  const n = el.querySelector('[data-count]'); const end = +n.dataset.count;
+  if (RM) { n.textContent = end; return; }
+  const t0 = performance.now(), dur = 1100;
+  const step = t => { const p = Math.min(1, (t - t0) / dur); n.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+/* ---------- intro: fragmentos que formam VELUNA (em toda recarga) ---------- */
+const intro = $('#intro');
+let started = false;
+const start = () => { if (started) return; started = true; document.body.classList.add('ready'); $$('[data-split]', hero).forEach(el => el.classList.add('in')); };
+(function(){
+  const root = document.documentElement;
+  const fill = $('#introFill'), pct = $('#introPct'), logoEl = $('#introLogo');
+  /* recursos essenciais: foto principal, logotipo e fontes — o progresso só avança quando cada um termina */
+  const heroImg = $('.hero__photo img');
+  const waitImg = img => new Promise(res => { if (img.complete && img.naturalWidth) return res(); img.addEventListener('load', res, {once:true}); img.addEventListener('error', res, {once:true}); });
+  const tasks = [waitImg(heroImg), waitImg(logoEl), document.fonts ? document.fonts.ready : Promise.resolve()];
+  let done = 0; tasks.forEach(t => t.then(() => done++, () => done++));
+  const TOTAL = tasks.length, MAX_WAIT = 7000;
+  const t0 = performance.now();
+  let shown = 0, finished = false;
+  let seen = false; try { seen = sessionStorage.getItem('veluna-intro') === '1'; sessionStorage.setItem('veluna-intro', '1'); } catch (e) {}
+  const SP = seen ? .45 : 1; // quem volta vê a mesma formação, em menos da metade do tempo
+
+  const finish = () => {
+    if (finished) return; finished = true;
+    fill.style.transform = 'scaleX(1)'; pct.textContent = '100%';
+    intro.classList.add('formed', 'show-bar');
+    setTimeout(() => {
+      intro.classList.add('is-out'); root.classList.remove('is-loading'); start();
+      setTimeout(() => intro.classList.add('is-gone'), 850);
+    }, RM ? 150 : 480 * SP);
+  };
+  const progress = (formedAt) => {
+    const el = performance.now() - t0;
+    const real = el > MAX_WAIT ? 1 : done / TOTAL;           // nunca passa do que realmente carregou
+    const cap = RM ? 1 : Math.min(1, el / (formedAt || 2600 * SP)); // acompanha a formação do nome
+    shown += (Math.min(real, cap) - shown) * .14;
+    if (Math.min(real, cap) >= 1 && shown > .985) shown = 1;
+    fill.style.transform = `scaleX(${shown.toFixed(4)})`; pct.textContent = Math.round(shown * 100) + '%';
+    return shown >= 1;
+  };
+
+  if (RM) { // versão simplificada: logotipo estático + barra real
+    intro.classList.add('intro--simple', 'show-bar');
+    const loop = () => { if (progress(1)) finish(); else requestAnimationFrame(loop); };
+    requestAnimationFrame(loop); return;
+  }
+
+  const cv = $('#introCanvas'), cx = cv.getContext('2d');
+  const LOWEND = innerWidth < 700 || (navigator.hardwareConcurrency || 4) <= 4;
+  let W, H, DPR = 1, P = [], built = false, tStart = 0;
+  const NEON = [193, 241, 32], WHITE = [238, 241, 232];
+  const size = () => { DPR = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0); };
+  size();
+  const build = () => {
+    const r = logoEl.getBoundingClientRect(); if (!r.width || !logoEl.naturalWidth) return false;
+    const ow = Math.round(r.width), oh = Math.round(r.height);
+    const off = document.createElement('canvas'); off.width = ow; off.height = oh;
+    const ox = off.getContext('2d'); ox.drawImage(logoEl, 0, 0, ow, oh);
+    let data; try { data = ox.getImageData(0, 0, ow, oh).data; } catch (e) { return false; }
+    const gap = Math.max(3, Math.round(ow / (LOWEND ? 150 : 240)));
+    const cxm = W / 2, cym = H / 2;
+    for (let y = 0; y < oh; y += gap) for (let x = 0; x < ow; x += gap) {
+      const k = (y * ow + x) * 4; if (data[k + 3] < 150) continue;
+      const green = data[k + 2] < 120;
+      const a = Math.random() * Math.PI * 2, burst = (.08 + Math.random() * .22) * Math.max(W, H);
+      P.push({
+        tx: r.left + x, ty: r.top + y,                                  // posição final (no logotipo)
+        sx: cxm + (Math.random() - .5) * 6, sy: cym + (Math.random() - .5) * 6, // nasce no centro
+        mx: cxm + Math.cos(a) * burst, my: cym + Math.sin(a) * burst * .7,     // ponto de dispersão
+        rot: Math.random() * 6.28, spin: (Math.random() - .5) * 3,
+        s: gap * (1.05 + Math.random() * .7), tri: Math.random() < .5,
+        d0: Math.random() * 380 * SP, d1: (650 + Math.random() * 520 + (x / ow) * 380) * SP,  // atrasos: o nome se monta da esquerda para a direita
+        c: green ? NEON : WHITE
+      });
+    }
+    return P.length > 0;
+  };
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const FORM = 2350 * SP; // ms até o nome estar formado
+  const draw = now => {
+    if (finished && intro.classList.contains('is-gone')) return;
+    if (!built) { built = build(); tStart = now; if (!built && now - t0 > 1500) { intro.classList.add('formed', 'show-bar'); built = 'fallback'; } }
+    const t = now - tStart;
+    cx.clearRect(0, 0, W, H);
+    if (built === true) {
+      // ponto de luz inicial
+      if (t < 600 * SP) { cx.globalAlpha = Math.min(1, t / 200) * (1 - t / (600 * SP)); cx.fillStyle = '#c1f120'; cx.fillRect(W / 2 - 2, H / 2 - 2, 4, 4); cx.globalAlpha = 1; }
+      const locked = t > FORM + 120;
+      for (const p of P) {
+        const te = t - p.d0; if (te < 0) continue;
+        let x, y, rot, mix;
+        const e1 = Math.min(1, te / (620 * SP));                       // 1) espalha girando
+        const e2 = Math.max(0, Math.min(1, (t - p.d1) / (FORM - p.d1)));  // 2) converge e encaixa
+        if (e2 <= 0) { const k = easeOut(e1); x = p.sx + (p.mx - p.sx) * k; y = p.sy + (p.my - p.sy) * k; rot = p.rot + p.spin * k; mix = 0; }
+        else { const k = ease(e2); x = p.mx + (p.tx - p.mx) * k; y = p.my + (p.ty - p.my) * k; rot = (p.rot + p.spin) * (1 - k); mix = Math.max(0, (e2 - .7) / .3); }
+        const c = p.c, r = Math.round(NEON[0] + (c[0] - NEON[0]) * mix), gg = Math.round(NEON[1] + (c[1] - NEON[1]) * mix), b = Math.round(NEON[2] + (c[2] - NEON[2]) * mix);
+        cx.globalAlpha = locked ? Math.max(0, 1 - (t - FORM - 120) / 450) : Math.min(1, te / 200);
+        cx.fillStyle = `rgb(${r},${gg},${b})`;
+        const s = p.s;
+        const co = Math.cos(rot) * DPR, si = Math.sin(rot) * DPR;
+        cx.setTransform(co, si, -si, co, x * DPR, y * DPR); cx.beginPath();
+        if (p.tri) { cx.moveTo(0, -s * .6); cx.lineTo(s * .55, s * .45); cx.lineTo(-s * .55, s * .45); }
+        else { cx.moveTo(-s * .35, -s * .35); cx.lineTo(s * .6, -s * .35); cx.lineTo(s * .35, s * .35); cx.lineTo(-s * .6, s * .35); }
+        cx.closePath(); cx.fill();
+      }
+      cx.setTransform(DPR, 0, 0, DPR, 0, 0); cx.globalAlpha = 1;
+      if (t > 900 * SP) intro.classList.add('show-bar');
+      if (t > FORM) intro.classList.add('formed');
+    }
+    const formedAt = built === true ? (tStart - t0) + FORM : 1600;
+    if (!finished && progress(formedAt) && (built !== true || t > FORM + 200)) finish();
+    requestAnimationFrame(draw);
+  };
+  addEventListener('resize', () => { if (!finished) { size(); if (built === true) { P = []; built = build(); } } });
+  const go = () => requestAnimationFrame(draw);
+  if (logoEl.complete && logoEl.naturalWidth) go(); else { logoEl.addEventListener('load', go, {once:true}); logoEl.addEventListener('error', go, {once:true}); setTimeout(() => { if (!built) go(); }, 1200); }
+})();
+
+/* ---------- trajetória: revelação das fotos ligada à rolagem ---------- */
+const pathSec = $('#trajetoria'), stage = $('#pstage');
+const cardA = $('.pcard--a'), cardB = $('.pcard--b');
+const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+function pathScroll(){
+  if (RM) return;
+  const sr = pathSec.getBoundingClientRect(); if (sr.bottom < -50 || sr.top > vh + 50) return;
+  pathSec.style.setProperty('--tp', clamp01((vh - sr.top) / (sr.height + vh)).toFixed(4));
+  const r = stage.getBoundingClientRect();
+  const ar = cardA.getBoundingClientRect(), br = cardB.getBoundingClientRect();
+  stage.style.setProperty('--ra', clamp01((vh - ar.top) / (vh * .85)).toFixed(4));  // foto A: revelação lenta
+  stage.style.setProperty('--rb', clamp01((vh - br.top) / (vh * .45)).toFixed(4));  // foto B: revelação rápida
+}
+if (RM) stage.style.cssText += ';--ra:1;--rb:1';
+
+/* ---------- cabeçalho, botão móvel e parallax ---------- */
+const bar = $('#bar');
+const speedEls = (RM || !FINE) ? [] : $$('[data-speed]');
+let ticking = false;
+const onScroll = () => {
+  ticking = false;
+  bar.classList.toggle('is-scrolled', scrollY > 30);
+  speedEls.forEach(el => {
+    const r = el.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return;
+    el.style.translate = `0 ${((r.top + r.height / 2 - vh / 2) * +el.dataset.speed).toFixed(1)}px`;
+  });
+  pathScroll();
+};
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+addEventListener('resize', onScroll); onScroll();
+
+/* ---------- botões: preenchimento a partir do ponteiro ---------- */
+document.addEventListener('pointermove', e => {
+  const b = e.target.closest && e.target.closest('.btn'); if (!b) return;
+  const r = b.getBoundingClientRect();
+  b.style.setProperty('--bx', (e.clientX - r.left) + 'px'); b.style.setProperty('--by', (e.clientY - r.top) + 'px');
+}, {passive:true});
+
+/* ---------- cursor discreto ---------- */
+if (FINE && !RM) {
+  const cur = $('#cursor'), dot = $('.cursor__dot', cur);
+  addEventListener('pointermove', e => { dot.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; cur.classList.remove('is-hidden'); }, {passive:true});
+  document.addEventListener('pointerleave', () => cur.classList.add('is-hidden'));
+  document.addEventListener('pointerover', e => cur.classList.toggle('is-hover', !!e.target.closest('a,button')));
+}
+})();
+</script>
+</body>
+</html>
